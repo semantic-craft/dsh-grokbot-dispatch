@@ -1,0 +1,55 @@
+{
+  "name": "dsh-grokbot-dispatch",
+  "version": "0.3.0",
+  "private": true,
+  "description": "DSH bidirectional dispatch plugin: visible desktop sessions for inbound Grok Bot / Yobiru tasks, outbound /dispatch-grok and /dispatch-zcode slash commands, and automatic Yobiru result reporting on session completion.",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "plugin",
+    "grok-bot",
+    "yobiru",
+    "zcode",
+    "dispatch"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": {
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "core.js",
+    "job-map.js",
+    "config.js",
+    "commands.js",
+    "transport.js",
+    "log.js",
+    "cordis.patch.yml",
+    "hooks",
+    "locale"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-commands": "*",
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/dsh-system-prompt": "*"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "harnessRange": ">=0.2.0-rc.2"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,5 @@
+# Mounted when installed as a dsh bundle (see README: the grokbot-dispatch profile).
+- insert:
+    - id: grokbot-dispatch
+      name: dsh-grokbot-dispatch
+      config: {}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Grok Bot & Yobiru 双向派活",
+    "description": "DeepSeek Harness (DSH) 与 Grok Bot、ZCode 双向任务派发插件：入站/出站任务均显示为桌面可见会话，完成后自动经 Yobiru 回报结果。"
+  }
+}

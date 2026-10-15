@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Grok Bot & Yobiru Dispatch",
+    "description": "Bidirectional task dispatch between DeepSeek Harness (DSH), Grok Bot, and ZCode with visible desktop sessions and automatic Yobiru result reporting."
+  }
+}
