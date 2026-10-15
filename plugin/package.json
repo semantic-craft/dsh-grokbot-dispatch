@@ -39,10 +39,10 @@
     "dsh": ">=0.2.0-rc.2"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "*",
-    "@deepseek-ai/dsh-commands": "*",
-    "@deepseek-ai/dsh-tools": "*",
-    "@deepseek-ai/dsh-system-prompt": "*"
+    "@deepseek-ai/cordis": ">=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-commands": ">=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-system-prompt": ">=0.2.0-rc.2 <0.3.0-0"
   },
   "dsh": {
     "manifestVersion": 1,
