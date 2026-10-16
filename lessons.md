@@ -44,5 +44,5 @@
 - 起因与后果：2026-10-15 box 开机更新后重新登录 Headscale，IP 由 <旧 box IP> 变为 <新 box IP>；白名单写死旧 IP，box→DSH 主机 派单被拒。#3（ebe9f77）改读 `DISPATCH_ALLOWED_IPS`，但默认值仍是两个字面 IP；#4（66cbd85）又在 plist 写死 `DISPATCH_ALLOWED_IPS=<新 box IP>`、代码默认去掉 .114，把下一次 IP 变动的坑重新埋回去。同一天第三次改动（#7）才彻底改成配置/发现，#8 再补残留注释。
 - 修复与证据：#7（8ea821a）新增 `plugin/config.js`，host/peers/allowlist/路径按 env > `~/.config/dsh-grokbot-dispatch/config.json` > `tailscale status --json` 解析，解析不到就不绑定、白名单为空即全拒；plist 改为模板由 `bin/install-launchd.sh` 渲染；`node --test test/*.test.js` 39/39，测试统一走占位地址夹具并关闭发现。#8（90959ed）修正注释。IP 再次变动后的真实自愈尚未发生，未验证。
 - 正确做法（Done right）：同日 zcode-dispatch #7（68d03e1，closes #5）一次把 host/peers/allowlist/路径收进单一配置源。改地址类问题时用私有网段与本机用户路径的扫描规则全仓核对，除测试夹具和 lessons 外为零才算修完，并把扫描结果写进 PR。
-- 复发记录：Seen 1x (2026-10-15)；同日 tailmsg-adapters 写死 Yobiru CLI 0.5.0 路径（#9/#10）属同类，在该仓库单独记录。
+- 复发记录：Seen 2x (2026-10-15, 2026-10-16)；10-15 同日 tailmsg-adapters 写死 Yobiru CLI 0.5.0 路径（#9/#10）属同类，在该仓库单独记录；10-16 hermes-dsh-dispatch #5 把 Janus tailnet IP 写成默认值、grokbot-box-services #28 在 restore 脚本写死 `EXPECTED_IP`，记录见 hermes-dsh-dispatch LESSONS.md。再在第三个不同日子出现就升为硬规则。
 
