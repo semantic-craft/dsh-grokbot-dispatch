@@ -4,6 +4,7 @@
 - Plugin entry (Cordis `apply`, HTTP service effect): `plugin/index.js`
 - Validation, auth, job store, DSH runner: `plugin/core.js`
 - Tests: `node --test test/*.test.js` (from repo root)
+- Local literal-IP guard: `bin/check` (docs, test(s)/fixtures, and exact path+address entries in `.ip-literals-allow` are exempt).
 - Host process (launchd user agent): optional; private deploy templates are not in this public repo
 - Box-side client: `client/dsh-dispatch.sh`
 - Secrets: the key lives only in `~/.config/dsh-grokbot-dispatch/key` (DSH host) and the box env file; never commit or print it.

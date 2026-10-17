@@ -125,3 +125,4 @@ See *Minimal working config* above. Private deployment config (Yobiru transport,
 - **Sleep / tailnet loss**: `supervise` retries bind errors every 30 s and TCP-probes `<host>:<port>` every 30 s. On the primary (desktop) host it never calls `process.exit` and resets `downSince` so it keeps rebinding across prolonged sleep.
 - **Logs** (`~/.local/state/dsh-grokbot-dispatch/logs/`): `dispatch.log` (rotated at 2 MB × 5) and `launchd.log`.
 - **Self-check**: `GET /health` (compat check); optional local self-check scripts (not shipped in this public repo) can print launchd state, `/health`, recent log events, and recent jobs.
+- **Local literal-IP guard**: `bin/check` (no network, no GitHub Actions) fails on hard-coded IPv4 addresses in the tailnet range. Docs, `test/`/`tests/` fixtures, and exact `path|address|reason` entries in `.ip-literals-allow` are exempt.
